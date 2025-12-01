@@ -1,6 +1,6 @@
-========================================
+============================================
 Employee–Department Microservices System
-========================================
+============================================
 - Developer: Talpa Saivaliveti
 - Date: November 24, 2025
 - Technology Stack: Microservices, Spring Boot, Eureka
