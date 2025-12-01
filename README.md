@@ -18,17 +18,17 @@ This project includes:
 -------------------------------------------
 ARCHITECTURE OVERVIEW 
 -------------------------------------------
-                +---------------------+
-                |     Eureka Server   |
-                |   (Service Registry)|
-                +----------+----------+
-                           |
-        ----------------------------------------
-        |                                      |
-+----------------------+         +-----------------------+
-|   Employee Service   | <---->  |   Department Service  |
-|  (Feign Client)      |         |   (REST APIs)         |
-+----------------------+         +-----------------------+
+                    +----------------------+
+                    |     Eureka Server    |
+                    |   (Service Registry) |
+                    +-----------+----------+
+                                |
+           ----------------------------------------
+           |                                      |
++----------------------+             +-----------------------+
+|   Employee Service   |    <---->   |   Department Service  |
+|  (Feign Client)      |             |   (REST APIs)         |
++----------------------+             +-----------------------+
 
 -------------------------------------------
 MODULES
@@ -101,11 +101,11 @@ EXECUTION GUIDE
 -------------------------------------------
 PROJECT STATUS
 -------------------------------------------
-Eureka Server Running
-Employee & Department Services Registered
-Feign Client Implemented for Service Communication
-Inter-service API Returning Combined Data
-Microservices Fully Functional
+- Eureka Server Running
+- Employee & Department Services Registered
+- Feign Client Implemented for Service Communication
+- Inter-service API Returning Combined Data
+- Microservices Fully Functional
 
 -------------------------------------------
 END OF README
