@@ -1,26 +1,19 @@
 package com.talpa.employee_service.controller;
 
+import com.talpa.employee_service.model.Department;
+import com.talpa.employee_service.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/employees")
 public class EmployeeController {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private EmployeeService employeeService;
 
-    @GetMapping("/employees")
-    public String getEmployees() {
-        return "List of employees: Alice, Bob, Charlie";
-    }
-
-    @GetMapping("/employees-with-departments")
-    public String getEmployeesWithDepartments() {
-        // Call Department Service dynamically via Eureka
-        String departmentUrl = "http://department-service/departments";
-        String departments = restTemplate.getForObject(departmentUrl, String.class);
-        return "Employees: Alice, Bob, Charlie | Departments: " + departments;
+    @GetMapping("/{id}/department")
+    public Department getEmployeeDepartment(@PathVariable Long id) {
+        return employeeService.getDepartmentById(id);
     }
 }
